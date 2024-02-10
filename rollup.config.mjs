@@ -1,4 +1,3 @@
-// import excludeDependenciesFromBundle from "rollup-plugin-exclude-dependencies-from-bundle"
 import { nodeResolve } from "@rollup/plugin-node-resolve"
 import typescript from "@rollup/plugin-typescript"
 // import terser from "@rollup/plugin-terser"
@@ -8,11 +7,11 @@ import * as fs from "fs"
 import path from "path"
 
 const PACKAGE_NAME = process.cwd()
+console.log("🚀 ~ PACKAGE_NAME:", PACKAGE_NAME)
 const pkg = JSON.parse(
   fs.readFileSync(path.join(PACKAGE_NAME, "package.json"), "utf-8")
 )
 
-console.log(pkg)
 const commonjsOptions = {
   ignoreGlobal: true,
   include: /node_modules/,
@@ -34,10 +33,10 @@ export default {
   input: `${PACKAGE_NAME}/lib/index.ts`,
   external: [...Object.keys(pkg.peerDependencies)],
   output: [
-    {
-      file: `dist/${pkg.main}`,
-      format: "cjs",
-    },
+    // {
+    //   file: `dist/${pkg.main}`,
+    //   format: "cjs",
+    // },
     {
       file: `dist/${pkg.module}`,
       format: "es",
@@ -46,8 +45,6 @@ export default {
   plugins: [
     nodeResolve(nodeOptions),
     typescript(typescriptOptions),
-    // excludeDependenciesFromBundle({ peerDependencies: true }),
-    // babel(babelOptions),
     commonjs(commonjsOptions),
     // terser(),
   ],
