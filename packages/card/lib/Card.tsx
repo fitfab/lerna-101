@@ -1,5 +1,5 @@
 import React from "react"
-
-export function Card() {
-  return <button>button</button>
+export interface CardProps extends React.ComponentProps<"div"> {}
+export function Card({ children, ...restProps }: CardProps) {
+  return <div {...restProps}>{children}</div>
 }

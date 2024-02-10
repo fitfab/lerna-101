@@ -1,5 +1,5 @@
 import React from "react"
-
-export function Button() {
-  return <button>button</button>
+export interface Buttonprops extends React.ComponentProps<"button"> {}
+export function Button({ children, ...restProps }: Buttonprops) {
+  return <button {...restProps}>{children}</button>
 }

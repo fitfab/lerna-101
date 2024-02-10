@@ -1,4 +1,6 @@
-# Lerna setup demo
+# Lerna setup with Rollupjs, Typescript and React
+
+This is a repo to explore Lerna along with Rollupjs, Typescript and React.
 
 ## Publishing with lerna
 
