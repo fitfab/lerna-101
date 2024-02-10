@@ -4,10 +4,14 @@ This is a repo to explore Lerna along with Rollupjs, Typescript and React.
 
 ## Publishing with lerna
 
-lerna run build
+`npx lerna run build`
 
-lerna version --no-private
+`npx lerna version`
 
-lerna publish from-git --no-private
+`npx lerna publish from-git --no-private`
 
-lerna publish from-package --registry https://npm.pkg.github.com
+`npx lerna publish from-package --registry https://npm.pkg.github.com`
+
+## React Tips & Tricks
+
+- React Type Helper: https://www.totaltypescript.com/concepts/react-componentprops-type-helper
