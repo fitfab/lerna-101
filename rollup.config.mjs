@@ -1,7 +1,6 @@
 import { nodeResolve } from "@rollup/plugin-node-resolve"
 import typescript from "@rollup/plugin-typescript"
 // import terser from "@rollup/plugin-terser"
-import commonjs from "@rollup/plugin-commonjs"
 
 import * as fs from "fs"
 import path from "path"
@@ -12,10 +11,6 @@ const pkg = JSON.parse(
   fs.readFileSync(path.join(PACKAGE_NAME, "package.json"), "utf-8")
 )
 
-const commonjsOptions = {
-  ignoreGlobal: true,
-  include: /node_modules/,
-}
 const extensions = [".js", ".ts", ".tsx"]
 
 const nodeOptions = {
@@ -33,10 +28,6 @@ export default {
   input: `${PACKAGE_NAME}/lib/index.ts`,
   external: [...Object.keys(pkg.peerDependencies)],
   output: [
-    // {
-    //   file: `dist/${pkg.main}`,
-    //   format: "cjs",
-    // },
     {
       file: `dist/${pkg.module}`,
       format: "es",
@@ -45,7 +36,6 @@ export default {
   plugins: [
     nodeResolve(nodeOptions),
     typescript(typescriptOptions),
-    commonjs(commonjsOptions),
     // terser(),
   ],
 }

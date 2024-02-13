@@ -36,5 +36,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "lerna": {
+    "command": {
+      "assets": [
+        "LICENSE",
+        "package.json",
+        "README.md"
+      ]
+    }
+  },
   "gitHead": "308a9a7f5da93695aa91e155a94add048e9b65af"
 }

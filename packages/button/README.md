@@ -5,7 +5,7 @@
 ## Usage
 
 ```JSX
-const card = require('card');
+import { Button } from "@mjuliodev/button"
 
-// TODO: DEMONSTRATE API
+<Button onCLick={hanldeClick}>More...</Button>
 ```
