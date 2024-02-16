@@ -10,7 +10,7 @@ This is a repo to explore Lerna along with Rollupjs, Typescript and React.
 
 `npx lerna publish from-git --no-private`
 
-`npx lerna publish from-package --registry https://npm.pkg.github.com`
+`npx lerna publish from-package`
 
 ## React Tips & Tricks
 
