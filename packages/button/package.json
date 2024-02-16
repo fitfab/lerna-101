@@ -3,7 +3,7 @@
   "version": "0.0.6",
   "description": "a demo button",
   "keywords": [
-    "card"
+    "button"
   ],
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "homepage": "https://github.com/fitfab/lerna-101",
@@ -12,8 +12,8 @@
     "url": "https://github.com/fitfab/lerna-101.git"
   },
   "license": "MIT",
-  "main": "index.cjs.js",
-  "module": "index.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
